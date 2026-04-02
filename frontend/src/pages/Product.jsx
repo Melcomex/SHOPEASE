@@ -52,7 +52,7 @@ export default function Product() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-gray-50 rounded-xl h-72 flex items-center justify-center">
             {product.image_url ? (
-              <img src={`http://localhost:8000${product.image_url}`} alt={product.name} className="h-full object-contain" />
+              <img src={product.image_url.startsWith('http') ? product.image_url : `http://localhost:8000${product.image_url}`} alt={product.name} className="h-full object-contain" />
             ) : (
               <div className="text-8xl">📦</div>
             )}

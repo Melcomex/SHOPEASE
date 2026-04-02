@@ -6,7 +6,7 @@ export default function ProductCard({ product, onAddToCart }) {
       <div className="bg-gray-50 h-48 flex items-center justify-center overflow-hidden">
         {product.image_url ? (
           <img
-            src={`http://localhost:8000${product.image_url}`}
+            src={product.image_url.startsWith('http') ? product.image_url : `http://localhost:8000${product.image_url}`}
             alt={product.name}
             className="h-full w-full object-cover group-hover:scale-105 transition"
           />

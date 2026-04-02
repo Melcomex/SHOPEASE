@@ -73,7 +73,7 @@ export default function Cart() {
                 <div key={item.id} className="bg-white rounded-xl shadow p-4 flex items-center gap-4">
                   <div className="w-16 h-16 bg-gray-50 rounded-lg flex items-center justify-center">
                     {item.product.image_url ? (
-                      <img src={`http://localhost:8000${item.product.image_url}`} alt={item.product.name} className="h-full object-contain" />
+                      <img src={product.image_url.startsWith('http') ? product.image_url : `http://localhost:8000${product.image_url}`} alt={item.product.name} className="h-full object-contain" />
                     ) : (
                       <span className="text-2xl">📦</span>
                     )}
